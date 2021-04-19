@@ -10,7 +10,7 @@ Configurações iniciais do projeto. Instalando express, TypeScript
 **TypeScript:** A linguagem de programação utilizada. É o JavaScript com superpoderes :).  
 **Ts Node Dev:** Para fazer a leitura e execução do código TypeScript, já que o Node por padrão não entende algumas funcionalidades presentes na linguagem.
 
-Cod. *missaoespacial*
+Cod. *missaoespacial* 
 
 **EXTRAS:** Adicionando o *Prettier*, *Eslint* e *Editor Config* para melhor organização do código.
 
