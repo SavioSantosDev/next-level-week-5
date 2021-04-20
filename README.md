@@ -14,4 +14,6 @@ Cod. *missaoespacial*
 
 **EXTRAS:** Adicionando o *Prettier*, *Eslint* e *Editor Config* para melhor organização do código.
 
+## Dia 2
 
+Cod. *embuscadoproximonivel*
