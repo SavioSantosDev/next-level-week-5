@@ -16,4 +16,9 @@ Cod. *missaoespacial*
 
 ## Dia 2
 
+Instalando, configurando e entendendo as ferramentas para lidar com armazenamento de informações dentro do banco de dados.
+
+**Sqlite:** O banco de dados utilizado.  
+**TypeORM:** Ferramenta para fazer conexão com o banco de dados e lidar com as transações.  
+
 Cod. *embuscadoproximonivel*
