@@ -2,6 +2,8 @@ import express from 'express';
 
 import './database';
 import settingRoutes from './routes/setting.routes';
+import userRoutes from './routes/user.routes';
+import messageRoutes from './routes/message.routes';
 
 class App {
   app;
@@ -17,7 +19,9 @@ class App {
   }
 
   routes() {
-    this.app.use(settingRoutes);
+    this.app.use('/settings', settingRoutes);
+    this.app.use('/users', userRoutes);
+    this.app.use('/messages', messageRoutes);
   }
 }
 
