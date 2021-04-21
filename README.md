@@ -22,3 +22,9 @@ Instalando, configurando e entendendo as ferramentas para lidar com armazenament
 **TypeORM:** Ferramenta para fazer conexão com o banco de dados e lidar com as transações.  
 
 Cod. *embuscadoproximonivel*
+
+## Dia 3
+
+Criando funcionalidades para envio de mensagens entre usuários e administradores por meio de requisições http. Foi ensinado mais detalhadamente como funciona criação de de tabelas, colunas e chaves estrangeiras, relacionamentos entre entidades e separação de responsabilidade do código entre serviços e controllers.
+
+Cod. *astronauta*
