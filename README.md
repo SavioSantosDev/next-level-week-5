@@ -28,3 +28,15 @@ Cod. *embuscadoproximonivel*
 Criando funcionalidades para envio de mensagens entre usuários e administradores por meio de requisições http. Foi ensinado mais detalhadamente como funciona criação de de tabelas, colunas e chaves estrangeiras, relacionamentos entre entidades e separação de responsabilidade do código entre serviços e controllers.
 
 Cod. *astronauta*
+
+## Dia 4
+
+Entendo na prática como funciona o web socket.
+
+No protocolo HTTP, o tempo de vida da conexão entre cliente e servidor começa quando o cliente faz uma requisição e o servidor responde, seja com que o cliente estava esperando ou um erro. Com iso vale notar que, o servidor só vai passar informações para o cliente apenas se o cliente requisitar algo.
+
+No protoco WS, web socket, o cliente se conecta com o servidor, é gerado um ID da conexão, e a conexão entre cliente e servidor só morre quando o cliente sair da conexão. Assim, uma vez que o cliente esteja conectado, o servidor estará livre para servir informações para cliente sem que ele tenha requisitado. É este protocolo utilizado em chats, notificações etc.
+
+**Socket.io:** Biblioteca utilizada para fazer as requisições via Web Socket
+
+Cod. *universoinfinito*

@@ -8,7 +8,7 @@ export class UserController {
     const userService = new UserService();
 
     try {
-      const user = await userService.create(email);
+      const user = await userService.getOrCreate(email);
 
       return res.status(201).json(user);
     } catch (err) {

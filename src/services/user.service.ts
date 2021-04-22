@@ -2,8 +2,8 @@ import { UserEntity } from './../entities/user.entity';
 import { userRepository } from '../repositories/user.repository';
 
 export class UserService {
-  async create(email: string): Promise<UserEntity> {
-    const userExists = await userRepository().findOne({ email });
+  async getOrCreate(email: string): Promise<UserEntity> {
+    const userExists = await this.findByEmail(email);
 
     if (userExists) {
       return userExists;
@@ -13,5 +13,9 @@ export class UserService {
 
     await userRepository().save(createdUser);
     return createdUser;
+  }
+
+  async findByEmail(email: string): Promise<UserEntity | undefined> {
+    return await userRepository().findOne({ email });
   }
 }
