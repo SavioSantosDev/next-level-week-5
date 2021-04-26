@@ -26,7 +26,32 @@ export class ConnectionService {
   }
 
   async findByUserId(user_id: string): Promise<ConnectionEntity | undefined> {
-    const connection = connectionRepository().findOne({ user_id });
+    const connection = await connectionRepository().findOne({ user_id });
     return connection;
+  }
+
+  async findAllWithoutAdmin(): Promise<ConnectionEntity[]> {
+    return await connectionRepository().find({
+      where: { admin_id: null },
+      relations: ['user'],
+    });
+  }
+
+  async findBySocketId(
+    socket_id: string,
+  ): Promise<ConnectionEntity | undefined> {
+    const connection = await connectionRepository().findOne({ socket_id });
+    return connection;
+  }
+
+  async updateAdminID(user_id: string, admin_id: string) {
+    await connectionRepository()
+      .createQueryBuilder()
+      .update(ConnectionEntity)
+      .set({ admin_id })
+      .where('user_id = :user_id', {
+        user_id,
+      })
+      .execute();
   }
 }

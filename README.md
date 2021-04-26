@@ -40,3 +40,7 @@ No protoco WS, web socket, o cliente se conecta com o servidor, é gerado um ID 
 **Socket.io:** Biblioteca utilizada para fazer as requisições via Web Socket
 
 Cod. *universoinfinito*
+
+## Dia 5
+
+Finalizando o sistema de chat de suporte, onde um atendente poderá se comunicar em tempo real com o usuário.

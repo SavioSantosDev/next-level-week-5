@@ -5,7 +5,7 @@ import path from 'path';
 import { renderFile } from 'ejs';
 
 import './database';
-import publicRoutes from './routes/public.routes';
+import pagesRoutes from './routes/pages.routes';
 import settingRoutes from './routes/setting.routes';
 import userRoutes from './routes/user.routes';
 import messageRoutes from './routes/message.routes';
@@ -37,7 +37,7 @@ class App {
   }
 
   routes() {
-    this.app.use('/', publicRoutes);
+    this.app.use('/', pagesRoutes);
     this.app.use(`${this.baseServerURL}/settings`, settingRoutes);
     this.app.use(`${this.baseServerURL}/users`, userRoutes);
     this.app.use(`${this.baseServerURL}/messages`, messageRoutes);

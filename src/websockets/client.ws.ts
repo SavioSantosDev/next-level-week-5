@@ -18,7 +18,7 @@ io.on('connect', (socket) => {
 
   // Aqui vamos fazer todos os eventos relacionados com o cliente
   // Os nomes dos eventos devem ser unicos
-  socket.on('first_client_access', async (params: Params) => {
+  socket.on('client_first_access', async (params: Params) => {
     const socket_id = socket.id;
     const { text, email } = params;
 
@@ -42,6 +42,31 @@ io.on('connect', (socket) => {
       }
 
       await messageService.create({ text, user_id: user.id });
+
+      // Buscando e emetindo todas as mensagens deste usuário
+      const allMessages = await messageService.findByUser(user.id);
+      socket.emit('client_list_all_messages', allMessages);
+
+      const allUsers = await connectionService.findAllWithoutAdmin();
+      io.emit('admin_list_all_users', allUsers);
+    }
+  });
+
+  socket.on('client_send_to_admin', async (params) => {
+    const { text, socket_admin_id } = params;
+
+    const connection = await connectionService.findBySocketId(socket.id);
+
+    if (connection?.user_id) {
+      const message = await messageService.create({
+        text,
+        user_id: connection?.user_id,
+      });
+
+      io.to(socket_admin_id).emit('admin_receive_message', {
+        message,
+        socket_id: socket.id,
+      });
     }
   });
 });
